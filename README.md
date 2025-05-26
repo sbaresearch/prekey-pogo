@@ -27,3 +27,19 @@ git clone https://github.com/sbaresearch/prekey-pogo
 podman build -t prekey-pogo .
 podman run -it -v ./session:/app/session prekey-pogo:latest
 ```
+
+## Program Execution
+After successful execution, the software prints a QR-code that can be used to establish a WhatsApp companion session (similar to WhatsApp Web).
+To pair the program with a WhatsApp account, the QR code needs to be scanned from the main device (i.e., the official WhatsApp application on Android or iOS).
+
+### Available commands
+```
+Enter command (write help to list available commands): help
+Available commands:
+	(h)elp     -- Show this help message
+	(t)arget   -- Update the current target number
+	(d)evices  -- Display existing sessions (main and companion devices) for the target number
+	(p)rekey   -- Retrieve a prekey bundle for the target number (main device only)
+	(c)ombine  -- Retrieve prekey bundles for all existing sessions (main and companion devices) of the target number
+	(e)xit     -- Exit the program
+```
