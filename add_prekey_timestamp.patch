@@ -1,0 +1,23 @@
+diff --git a/prekeys.go b/prekeys.go
+index 73a6108..a45cd32 100644
+--- a/prekeys.go
++++ b/prekeys.go
+@@ -95,6 +95,7 @@ func (cli *Client) uploadPreKeys(ctx context.Context) {
+ 
+ type preKeyResp struct {
+ 	bundle *prekey.Bundle
++	ts     time.Time
+ 	err    error
+ }
+ 
+@@ -129,8 +130,9 @@ func (cli *Client) fetchPreKeys(ctx context.Context, users []types.JID) (map[typ
+ 			continue
+ 		}
+ 		jid := child.AttrGetter().JID("jid")
++		ts := child.AttrGetter().UnixTime("t")
+ 		bundle, err := nodeToPreKeyBundle(uint32(jid.Device), child)
+-		respData[jid] = preKeyResp{bundle, err}
++		respData[jid] = preKeyResp{bundle, ts, err}
+ 	}
+ 	return respData, nil
+ }
