@@ -2,7 +2,7 @@
 This artifact contains source code demonstrating how to leverage an open-source WhatsApp client (emulating a companion session) to interact with WhatsApp's internal API.
 The software allows retrieval of a session directory and the corresponding prekey material for any arbitrary phone number.
 
-## Security, privacy, and ethical concerns
+## Security, Privacy, and Ethical Concerns
 We want to highlight that all findings (including our corresponding WOOT paper) were reported via Meta's bug bounty program (ticket #10212619137590341) in March 2025.
 The ticket was closed as a duplicate and Meta neither followed up on our questions, nor request an embargo for the public release of our findings.
 To the best of our knowledge, most attacks presented in the paper remain unfixed and should still work.
@@ -43,4 +43,18 @@ Available commands:
 	(p)rekey   -- Retrieve a prekey bundle for the target number (main device only)
 	(c)ombine  -- Retrieve prekey bundles for all existing sessions (main and companion devices) of the target number
 	(e)xit     -- Exit the program
+```
+
+## Research Paper
+This project was developed as part of the artifact evaluation for our research paper, *Prekey Pogo: Investigating Security and Privacy Issues in  WhatsApp's Handshake Mechanism*, accepted at USENIX WOOT 2025.
+We provide the final versions of both the [paper](CR_Prekey_Pogo_Investigating_Security_and_Privacy_Issues_in_WhatsApps_Handshake_Mechanism_PN.pdf) and the [artifact appendix](CR_Prekey_Pogo_Investigating_Security_and_Privacy_Issues_in_WhatsApps_Handshake_Mechanism_AE.pdf).
+
+If you want to cite our paper in your work, please use the following BibTeX entry.
+```bibtex
+@inproceedings{gegenhuber2025prekey,
+  title={Prekey Pogo: Investigating Security and Privacy Issues in  WhatsApp's Handshake Mechanism},
+  author={Gegenhuber, Gabriel K and and Frenzel, Philipp {\'E} and Günther, Maximilian and Judmayer, Aljosha},
+  booktitle={19th USENIX WOOT Conference on Offensive Technologies (WOOT 25)},
+  year={2025}
+}
 ```
